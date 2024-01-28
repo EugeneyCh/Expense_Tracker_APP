@@ -28,12 +28,8 @@ function RecentExpenses() {
     fetchExpenses();
   }, []);
 
-  function errorHandler() {
-    setError(null);
-  }
-
   if (error && !isFetching) {
-    return <ErrorOverlay message={error} onConfirm={errorHandler} />;
+    return <ErrorOverlay message={error} />;
   }
 
   if (isFetching) {
